@@ -3,7 +3,7 @@ import {
   wordmarkLight,
   logoFullDark as fullDark,
   logoFullLight as fullLight,
-} from '../assets/images.js';
+} from './images.js';
 
 /**
  * Logotipo oficial Viva4You.

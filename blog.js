@@ -17,7 +17,7 @@ import {
   colEssenciais as summerImg,
   celebrationLookImg as celebrationImg,
   suedeBlazerImg as suedeImg,
-} from '../assets/images.js';
+} from './images.js';
 
 export const blogIntro = {
   eyebrow: 'Journal Viva4You',

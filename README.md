@@ -1,5 +1,7 @@
 # Viva4You — Landing Page (React + Tailwind + Lucide)
 
+> Versão **sem pastas**: todos os arquivos ficam na raiz do repositório (facilita o upload pelo site do GitHub).
+
 ## Rodar e publicar
 ```
 npm install
@@ -9,7 +11,7 @@ npm run build:preview  # HTML único para apresentação → dist-preview/
 ```
 
 ## Onde editar
-Tudo fica em **`src/config/site.js`**:
+Tudo fica em **`site.js`**:
 - **Campanha** (`campaign`): `active` liga/desliga; `hideAfter` remove a campanha sozinha
   depois da data (nada de promoção vencida); `conditionsConfirmed` — mude para `true`
   quando a marca confirmar os descontos (remove a nota de "condições previstas").
@@ -21,7 +23,7 @@ Tudo fica em **`src/config/site.js`**:
 - **SEO** (`seo.canonicalUrl`) e **mensuração** (`analytics.gtmId` / `ga4Id`).
 
 ## Fotos
-Embutidas no código em `src/assets/images.js` (data URI .webp) — não há arquivos de imagem para subir, exceto `public/images/og-viva4you.jpg` (prévia de compartilhamento, que precisa ser uma URL). Já aplicadas: hero, Viva Friday (versão P&B), 3 categorias da coleção, Celebration e Nossa essência. Para trocar, gere o base64 da nova foto (.webp) e substitua a string em `images.js`.
+Embutidas no código em `images.js` (data URI .webp) — não há arquivos de imagem para subir, exceto `og-viva4you.jpg` (prévia de compartilhamento, que precisa ser uma URL). Já aplicadas: hero, Viva Friday (versão P&B), 3 categorias da coleção, Celebration e Nossa essência. Para trocar, gere o base64 da nova foto (.webp) e substitua a string em `images.js`.
 
 ### Tamanhos de referência
 | Chave | Uso | Formato sugerido |
@@ -39,7 +41,7 @@ Embutidas no código em `src/assets/images.js` (data URI .webp) — não há arq
 Cada foto com até ~250 KB.
 
 ## Antes de publicar
-- [ ] Trocar `SEUDOMINIO` em `public/robots.txt`, `public/sitemap.xml` e nas tags comentadas de `index.html` (canonical, og:url, og:image).
+- [ ] Trocar `SEUDOMINIO` em `robots.txt`, `sitemap.xml` e nas tags comentadas de `index.html` (canonical, og:url, og:image).
 - [ ] Preencher `seo.canonicalUrl`.
 - [ ] Confirmar descontos com a marca → `conditionsConfirmed: true`.
 - [x] GTM instalado (GTM-KJMZGV82).
@@ -53,7 +55,7 @@ Cada foto com até ~250 KB.
   (`analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`).
 - Evento `consent_update` no dataLayer após a escolha (variáveis `consent_analytics` e `consent_marketing`).
 - No GTM: GA4 e tags de anúncio devem respeitar o consentimento (Configurações avançadas → Configurações de consentimento).
-- Política em `/politica-de-privacidade` (`src/components/PrivacyPage.jsx`). Preencha razão social, CNPJ e e-mail em `legal` (site.js).
+- Política em `/politica-de-privacidade` (`PrivacyPage.jsx`). Preencha razão social, CNPJ e e-mail em `legal` (site.js).
 - Rodapé: links "Política de Privacidade" e "Preferências de cookies".
 
 ## Eventos de mensuração (dataLayer)
@@ -61,9 +63,9 @@ Cada foto com até ~250 KB.
 Parâmetros: `section` (onde foi o clique) e `label`. No GTM, crie acionadores "Evento personalizado" com esses nomes.
 
 ## Blog (Journal Viva4You)
-- Artigos em `src/content/blog.js` (texto, imagem, SEO e mensagem de WhatsApp de cada um).
+- Artigos em `blog.js` (texto, imagem, SEO e mensagem de WhatsApp de cada um).
 - URLs: `/blog/looks-de-verao`, `/blog/looks-natal-e-ano-novo`, `/blog/textura-encontra-alfaiataria-suede`.
 - Cada artigo atualiza title, description, canonical e dados estruturados (BlogPosting).
-- Hospedagem: `public/_redirects` (Netlify) e `public/.htaccess` (Hostinger/Apache) já fazem as URLs do blog abrirem o site.
-- Novo artigo: copie um objeto em `blog.js` e acrescente a URL no `public/sitemap.xml`.
+- Hospedagem: `_redirects` (Netlify) e `.htaccess` (Hostinger/Apache) já fazem as URLs do blog abrirem o site.
+- Novo artigo: copie um objeto em `blog.js` e acrescente a URL no `sitemap.xml`.
 - Evento de mensuração extra: `click_blog`.

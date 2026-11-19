@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Atualize com o domínio definitivo
+Sitemap: https://www.SEUDOMINIO.com.br/sitemap.xml

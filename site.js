@@ -17,7 +17,7 @@ import {
   colEssenciais,
   celebrationImg,
   essenceImg,
-} from '../assets/images.js';
+} from './images.js';
 
 /* ------------------------------------------------------------
  * 1. MARCA E CONTATOS (somente informações confirmadas)
@@ -197,7 +197,7 @@ export const images = {
   essence: essenceImg,
   essenceAlt: 'Ateliê com croqui de vestido, amostras de tecido em areia, off-white e azul-marinho e linhas de costura',
   finalCta: null,
-  ogImage: '/images/og-viva4you.jpg', // 1200×630, usada no compartilhamento
+  ogImage: '/og-viva4you.jpg', // 1200×630, usada no compartilhamento
 };
 
 /* ------------------------------------------------------------
